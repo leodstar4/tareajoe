@@ -1,11 +1,98 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Dstarbby — Laravel + Voyager
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplicación Laravel con panel de administración Voyager y CRUD de artículos.
+
+## Requisitos
+
+- PHP 8.2 o superior
+- Composer
+- Node.js y npm
+- MySQL
+
+## Instalación
+
+**1. Clonar el repositorio**
+
+```bash
+git clone https://github.com/leodstar4/tareajoe.git
+cd tareajoe
+```
+
+**2. Instalar dependencias de PHP**
+
+```bash
+composer install
+```
+
+**3. Instalar dependencias de JavaScript**
+
+```bash
+npm install
+```
+
+**4. Configurar el entorno**
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+Edita el archivo `.env` y configura tu base de datos:
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=dstarbby
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+**5. Ejecutar migraciones e instalar Voyager**
+
+```bash
+php artisan voyager:install --with-dummy
+```
+
+Este comando crea la base de datos, ejecuta las migraciones y siembra datos de ejemplo.
+
+**6. Crear enlace de almacenamiento**
+
+```bash
+php artisan storage:link
+```
+
+**7. Compilar assets**
+
+```bash
+npm run build
+```
+
+**8. Iniciar el servidor**
+
+```bash
+php artisan serve
+```
+
+La aplicación estará disponible en `http://localhost:8000`.
+
+## Acceso al panel de administración
+
+- URL: `http://localhost:8000/admin`
+- Email: `admin@admin.com`
+- Password: `password`
+
+## Rutas principales
+
+| Ruta | Descripción |
+|------|-------------|
+| `/` | Página de inicio |
+| `/articles` | Listado de artículos |
+| `/articles/{id}` | Ver artículo |
+| `/articles/{id}/edit` | Editar artículo |
+| `/admin` | Panel Voyager |
+
+---
 
 ## About Laravel
 
